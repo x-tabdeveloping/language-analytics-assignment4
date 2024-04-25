@@ -55,7 +55,7 @@ def main():
         },
     )
     fig = fig.update_layout(
-        width=800, height=800, yaxis_title="Relative Frequency of Emotion in Season"
+        width=800, height=1200, yaxis_title="Relative Frequency of Emotion in Season"
     )
     fig = fig.update_traces(line=dict(width=4))
     fig.write_image(out_dir.joinpath("emotion_per_season_line.png"), scale=2)
