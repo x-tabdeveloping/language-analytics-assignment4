@@ -27,15 +27,13 @@ def main():
         # Extracting emotion distributions per season
         per_season = emotions.groupby("Season")["emotion_label"].value_counts()
         per_season = per_season.reset_index("Season")
-        per_season = per_season.rename(columns={"emotion_label": "count"})
         # Extracting relative frequencies
-        per_season = per_season.groupby("Season", group_keys=True).apply(
-            lambda s: s / np.sum(s)
+        per_season = (
+            per_season.groupby("Season").apply(lambda s: s / np.sum(s)).reset_index()
         )
-        per_season = per_season.reset_index()
         per_season = per_season.rename(columns={"count": "rel_freq"})
         # Mapping Season name to just number
-        per_season["Season"] = per_season["Season"].map(lambda s: int(s.split(" ")[-2]))
+        per_season["Season"] = per_season["Season"].map(lambda s: int(s.split(" ")[-1]))
         print("Calculating season distributions per emotion.")
         per_emotion = (
             emotions.groupby("emotion_label")["Season"].value_counts().reset_index()
