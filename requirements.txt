@@ -4,4 +4,4 @@ pandas==2.2.2
 plotly==5.21.0
 transformers==4.39.3
 tqdm==4.66.2
-
+codecarbon==2.3.5
