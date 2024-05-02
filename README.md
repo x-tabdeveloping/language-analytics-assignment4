@@ -74,3 +74,7 @@ Some remarks:
 2. The highest proportion of sadness labels come from Season 6, which, as we previously observed, peaked in this season. While with all other emotions Season 6 made up about 11% of them, Sadness is 15.4% percent from Season 6.
 3. We can see a similar tendency with joy, where, while Season 2 provides most passages, a relatively large portion come from Season 5 in comparison with how important Season 5 is for the rest of the emotions.
 
+> Additionally the script will produce csv files with the CO2 emissions of the substasks in the code (`emissions/`).
+> This is necessary for Assignment 5, and is not directly relevant to this assignment.
+
+> Note: The `emissions/emissions.csv` file should be ignored. This is due to the fact, that codecarbon can't track process and task emissions at the same time.
